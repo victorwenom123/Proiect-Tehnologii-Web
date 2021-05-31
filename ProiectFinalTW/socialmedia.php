@@ -10,12 +10,12 @@
 <body>
     <div class="hero">
         <div class="navbar">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="images/logo2.png" alt="logo" class="logo" width="200" height="62">
             </a>
             <div class="buttons">
-                <button class="btn-1" onclick="window.location.href='index.html'"><strong>Home</strong></button>
-                <button class="btn-1" onclick="window.location.href='login.html'"><strong>Back</strong></button>
+                <button class="btn-1" onclick="window.location.href='index.php'"><strong>Home</strong></button>
+                <button class="btn-1" onclick="window.location.href='login.php'"><strong>Back</strong></button>
             </div>
         </div>
         <div class="live">

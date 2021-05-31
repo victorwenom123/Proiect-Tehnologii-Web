@@ -11,12 +11,12 @@
 <body>
     <div class="hero">
         <div class="navbar">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="images/logo.png" alt="logo" class="logo" width="200" height="62">
             </a>
             <div class="buttons">
-                <button class="btn-1" onclick="window.location.href='index.html'"><strong>Home</strong></button>
-                <button class="btn-1" onclick="window.location.href='login.html'"><strong>Login / Sign-up</strong></button>
+                <button class="btn-1" onclick="window.location.href='index.php'"><strong>Home</strong></button>
+                <button class="btn-1" onclick="window.location.href='login.php'"><strong>Login / Sign-up</strong></button>
             </div>
         </div>
         <div class="forms">
@@ -66,14 +66,14 @@
                             </div>
                             <div class="col-75">
                                 <select id="g1" name="genre1">
-                                <option value="none">None</option>
-                                <option value="rock">Rock</option>
-                                <option value="pop">Pop</option>
-                                <option value="electronic">Electronic</option>
-                                <option value="rb">R&B</option>
-                                <option value="latin">Latin</option>
-                                <option value="reggae">Reggae</option>
-                            </select>
+                                    <option value="none">None</option>
+                                    <option value="rock">Rock</option>
+                                    <option value="pop">Pop</option>
+                                    <option value="electronic">Electronic</option>
+                                    <option value="rb">R&B</option>
+                                    <option value="latin">Latin</option>
+                                    <option value="reggae">Reggae</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -131,14 +131,14 @@
                             </div>
                             <div class="col-75">
                                 <select id="g2" name="genre1">
-                                <option value="none">None</option>
-                                <option value="rock">Rock</option>
-                                <option value="pop">Pop</option>
-                                <option value="electronic">Electronic</option>
-                                <option value="rb">R&B</option>
-                                <option value="latin">Latin</option>
-                                <option value="reggae">Reggae</option>
-                            </select>
+                                    <option value="none">None</option>
+                                    <option value="rock">Rock</option>
+                                    <option value="pop">Pop</option>
+                                    <option value="electronic">Electronic</option>
+                                    <option value="rb">R&B</option>
+                                    <option value="latin">Latin</option>
+                                    <option value="reggae">Reggae</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="send-button">
-                <button class="btn-2" onclick="window.location.href='results.html'"><strong>SEND THE
+                <button class="btn-2" onclick="window.location.href='results.php'"><strong>SEND THE
                         INFORMATION</strong></button>
             </div>
         </div>

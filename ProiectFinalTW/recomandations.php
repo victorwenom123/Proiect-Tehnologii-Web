@@ -11,12 +11,12 @@
 <body>
     <div class="hero">
         <div class="navbar">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="images/logo.png" alt="logo" class="logo" width="200" height="62">
             </a>
             <div class="buttons">
-                <button class="btn-1" onclick="window.location.href='index.html'"><strong>Home</strong></button>
-                <button class="btn-1" onclick="window.location.href='login.html'"><strong>Login / Sign-up</strong></button>
+                <button class="btn-1" onclick="window.location.href='index.php'"><strong>Home</strong></button>
+                <button class="btn-1" onclick="window.location.href='login.php'"><strong>Login / Sign-up</strong></button>
             </div>
         </div>
         <div class="form-container">
@@ -30,14 +30,14 @@
                             </div>
                             <div class="col-75">
                                 <select id="pref" name="preferences">
-                <option value="none">None</option>
-                <option value="rock">Rock</option>
-                <option value="pop">Pop</option>
-                <option value="electronic">Electronic</option>
-                <option value="rb">R&B</option>
-                <option value="latin">Latin</option>
-                <option value="reggae">Reggae</option>
-              </select>
+                                    <option value="none">None</option>
+                                    <option value="rock">Rock</option>
+                                    <option value="pop">Pop</option>
+                                    <option value="electronic">Electronic</option>
+                                    <option value="rb">R&B</option>
+                                    <option value="latin">Latin</option>
+                                    <option value="reggae">Reggae</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -46,16 +46,16 @@
                             </div>
                             <div class="col-75">
                                 <select id="state" name="mood">
-                <option value="none">None</option>
-                <option value="happy">Happy</option>
-                <option value="sad">Sad</option>
-                <option value="angry">Angry</option>
-                <option value="tired">Tired</option>
-                <option value="relaxed">Relaxed</option>
-                <option value="humorous">Humorous</option>
-                <option value="reflective">Reflective</option>
-                <option value="romantic">Romantic</option>
-              </select>
+                                    <option value="none">None</option>
+                                    <option value="happy">Happy</option>
+                                    <option value="sad">Sad</option>
+                                    <option value="angry">Angry</option>
+                                    <option value="tired">Tired</option>
+                                    <option value="relaxed">Relaxed</option>
+                                    <option value="humorous">Humorous</option>
+                                    <option value="reflective">Reflective</option>
+                                    <option value="romantic">Romantic</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -88,10 +88,10 @@
                             </div>
                             <div class="col-75">
                                 <select id="type" name="habitat">
-                              <option value="none">None</option>
-                              <option value="rural">Rural</option>
-                              <option value="urban">Urban</option>
-                            </select>
+                                    <option value="none">None</option>
+                                    <option value="rural">Rural</option>
+                                    <option value="urban">Urban</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -100,10 +100,10 @@
                             </div>
                             <div class="col-75">
                                 <select id="level" name="education">
-                <option value="none">None</option>
-                <option value="high">High</option>
-                <option value="low">Low</option>
-              </select>
+                                    <option value="none">None</option>
+                                    <option value="high">High</option>
+                                    <option value="low">Low</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -112,10 +112,10 @@
                             </div>
                             <div class="col-75">
                                 <select id="z" name="zone">
-                <option value="none">None</option>
-                <option value="mountain">Mountain</option>
-                <option value="sea">Seaside</option>
-              </select>
+                                    <option value="none">None</option>
+                                    <option value="mountain">Mountain</option>
+                                    <option value="sea">Seaside</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -124,16 +124,16 @@
                             </div>
                             <div class="col-75">
                                 <select id="e" name="entourage">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="send-button">
-                    <button class="btn-2" onclick="window.location.href='recomandationsresults.html'"><strong>SEND THE
-            INFORMATION</strong></button>
+                    <button class="btn-2" onclick="window.location.href='recomandationsresults.php'"><strong>SEND THE
+                            INFORMATION</strong></button>
                 </div>
             </div>
         </div>
