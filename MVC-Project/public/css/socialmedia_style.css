@@ -125,35 +125,35 @@ button {
 }
 
 .live .person:nth-child(1) .profile-pic {
-    background-image: url(images/andrei.jpg);
+    background-image: url(/MVC-Project/public/css/images/andrei.jpg);
 }
 
 .live .person:nth-child(2) .profile-pic {
-    background-image: url(images/victor.jpg);
+    background-image: url(/MVC-Project/public/css/images/victor.jpg);
 }
 
 .live .person:nth-child(3) .profile-pic {
-    background-image: url(images/cristi.jpg);
+    background-image: url(/MVC-Project/public/css/images/cristi.jpg);
 }
 
 .live .person:nth-child(4) .profile-pic {
-    background-image: url(images/default.png);
+    background-image: url(/MVC-Project/public/css/images/default.png);
 }
 
 .live .person:nth-child(5) .profile-pic {
-    background-image: url(images/default.png);
+    background-image: url(/MVC-Project/public/css/images/default.png);
 }
 
 .live .person:nth-child(6) .profile-pic {
-    background-image: url(images/default.png);
+    background-image: url(/MVC-Project/public/css/images/default.png);
 }
 
 .live .person:nth-child(7) .profile-pic {
-    background-image: url(images/default.png);
+    background-image: url(/MVC-Project/public/css/images/default.png);
 }
 
 .live .person:nth-child(8) .profile-pic {
-    background-image: url(images/default.png);
+    background-image: url(/MVC-Project/public/css/images/default.png);
 }
 
 .live .person .name {
@@ -203,7 +203,7 @@ button {
 }
 
 .card .picture {
-    background-image: url('images/song.jpg');
+    background-image: url('/MVC-Project/public/css/images/song.jpg');
     background-position: center top;
     background-size: cover;
     height: 200px;
@@ -223,7 +223,7 @@ button {
 }
 
 .card .profile-pic {
-    background-image: url('images/default.png');
+    background-image: url('/MVC-Project/public/css/images/default.png');
     background-position: 50%;
     background-size: cover;
     height: 50px;

@@ -30,7 +30,7 @@
 }
 
 body {
-    background-image: url(images/bg_landscape_rec.jpg);
+    background-image: url(/MVC-Project/public/css/images/bg_landscape_rec.jpg);
     background-size: cover;
     background-position: center;
 }

@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Scholarly HTML</title>
-    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="/MVC-Project/public/css/scholarly.css">
 </head>
 
 <body prefix="schema: http://schema.org">
     <div class="navbar">
-        <a href="index.php">
-            <img src="images/logo.png" alt="logo" class="logo" width="200" height="62">
+        <a href="/MVC-Project/public/home">
+            <img src="/MVC-Project/public/css/images/logo.png" alt="logo" class="logo" width="200" height="62">
         </a>
         <div class="buttons">
-            <button class="btn-1" onclick="window.location.href='index.php'"><strong>Home</strong></button>
+            <button class="btn-1" onclick="window.location.href='/MVC-Project/public/home'"><strong>Home</strong></button>
         </div>
     </div>
     <header>
@@ -22,7 +22,7 @@
     </header>
     <div role="contentinfo">
         <dl>
-            <dt> Autori</dt>
+            <dt>   Autori</dt>
             <dd>
                 <a href="https://github.com/victorwenom123/Proiect-Tehnologii-Web">Andrieș Dumitru-Andrei </a> &amp;
                 <a href="https://github.com/victorwenom123/Proiect-Tehnologii-Web">Fârțade Cristian </a> &amp;

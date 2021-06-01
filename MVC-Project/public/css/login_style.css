@@ -7,7 +7,7 @@
     .hero {
         height: 100%;
         width: 100%;
-        background-image: url(images/bg5_sml_3000_2000.jpg);
+        background-image: url(/MVC-Project/public/css/images/bg5_sml_3000_2000.jpg);
         background-position: center;
         background-size: cover;
         position: absolute;
