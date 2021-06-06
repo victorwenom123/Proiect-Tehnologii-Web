@@ -26,7 +26,7 @@
                     <button type="button" class="btn-1" onclick="login()"><strong>Log In</strong></button>
                     <button type="button" class="btn-1" onclick="register()"><strong>Sign-up</strong></button>
                 </div>
-                <form id="login" action="../includes/login.inc.php" method="post" class="input-group">
+                <form id="login" action="/MVC-Project/public/includes/login.inc.php" method="post" class="input-group">
                     <input type="text" class="input-field" name="name" placeholder="Username/Email..." required>
                     <input type="password" name="pwd" class="input-field" placeholder="Password..." required>
                     <label>
@@ -34,7 +34,7 @@
                     </label>
                     <button type="submit" name="submit" class="submit-button"><strong>Log In</strong></button>
                 </form>
-                <form id="register" action="../includes/signup.inc.php" method="post" class="input-group">
+                <form id="register" action="/MVC-Project/public/includes/signup.inc.php" method="post" class="input-group">
                     <input type="text" class="input-field" name="name" placeholder="Username..." required>
                     <input type="email" class="input-field" name="email" placeholder="Email..." required>
                     <input type="password" class="input-field" name="pwd" placeholder="Password..." required>
@@ -56,7 +56,7 @@
                         echo "<p>Something went wrong!</p>";
                     } else if ($_GET["error"] == "usernametaken") {
                         echo "<p>Username already taken!</p>";
-                    } else if ($_GET["error"] == "name") {
+                    } else if ($_GET["error"] == "none") {
                         echo "<p>You have signed up</p>";
                     } else if ($_GET["error"] == "name") {
                         echo "<p>Incorrect login Information</p>";
