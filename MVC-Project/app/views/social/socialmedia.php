@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <title>social media demo page</title>
     <link rel="stylesheet" href="/MVC-Project/public/css/socialmedia_style.css">
+
+    <script>
+        function showSuggestion(str) {
+            if (str.length == 0) {
+                document.getElementById('output').innerHTML = '';
+            } else {
+                //AJAX REQUEST
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById('output').
+                        innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "/MVC-Project/public/includes/socialajax.inc.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -54,15 +73,29 @@
 
         </div>
         <div class="tweet">
-            <form>
+            <form id="search" action="/MVC-Project/public/includes/social.inc.php" method="post">
                 <div class="form-top">
-                    <label for="c1"><strong>What are you thinking about? </strong></label>
+                    <label for="c1"><strong>Search for a song!</strong></label>
+                    <?php
+                    if (isset($_GET["error"])) {
+                        if ($_GET["error"] == "emptyinput") {
+                            echo "<p style='color:black'>Give us a name for the song</p>";
+                        } else if ($_GET["error"] == "tryedToHack") {
+                            echo "<p style='color:black'>Police will be alerted!!!</p>";
+                        } else if ($_GET["error"] == "songNotFound") {
+                            echo "<p style='color:black'>We don't have this song in our DB!</p>";
+                        } else if ($_GET["error"] == "noSongInDB") {
+                            echo "<p style='color:black'>Something went wrong!</p>";
+                        }
+                    }
+                    ?>
                     <div class="send-button">
-                        <input class="btn-2" type="submit" value="POST!">
+                        <input class="btn-2" name="submit2" type="submit" value="SEARCH!">
                     </div>
                 </div>
-                <textarea id="c1" name="comments1" placeholder="Write a tweet..."></textarea>
+                <input type="text" id="c1" name="comments1" onkeyup="showSuggestion(this.value)" placeholder="Write a tweet...">
             </form>
+            <p style="color:red"><b>Suggestions:</b> <span id="output" style="font-weight:bold; color:blue"></span> </p>
         </div>
         <div class="newsfeed">
             <div class="news-head">

@@ -83,7 +83,7 @@ function loginUser($conn, $username, $pwd)
 {
     $uidExists = uidExists($conn, $username, $username);
     if ($uidExists === false) {
-        header("locaton: /MVC-Project/public/login?error=wronglogin");
+        header("location: /MVC-Project/public/login?error=wronglogin");
         exit();
     } else {
         $pwdHashed = $uidExists["usersPwd"];
@@ -91,7 +91,7 @@ function loginUser($conn, $username, $pwd)
         $UNAME = $uidExists["usersName"];
         $checkPwd = password_verify($pwd, $pwdHashed);
         if ($checkPwd === false) {
-            header("locaton: /MVC-Project/public/login?error=wronglogin");
+            header("location: /MVC-Project/public/login?error=wronglogin");
             exit();
         } else if ($checkPwd === true) {
             session_start();
@@ -100,5 +100,49 @@ function loginUser($conn, $username, $pwd)
             header("location: /MVC-Project/public/home?error=loginsuceed");
             exit();
         }
+    }
+}
+
+
+function emptyInputSearch($song){
+    $result = false;
+    if (empty($song)) {
+        $result = true;
+    }
+    return $result;
+}
+
+function searchForSong($conn1,$song){
+    $linkYt = "";
+    $exists = false;
+    $scriptfail = false;
+    if(str_contains($song,'<script>')){
+        $scriptfail = true;
+        header("location: /MVC-Project/public/social?error=tryedToHack");
+        exit();
+    }
+    $sql = "SELECT * FROM songs";
+    $result = mysqli_query($conn1,$sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0){
+        while ($row = mysqli_fetch_assoc($result)){
+            if(strtolower($song)==strtolower($row['name'])){
+                $linkYt = $row['youtubeLink'];
+                $exists = true;
+            }
+        }
+        if($exists === true){
+            header("location: $linkYt");
+            exit();
+        }
+        else{
+            header("location: /MVC-Project/public/social?error=songNotFound");
+            exit();
+        }
+    }
+    else{
+        header("location: /MVC-Project/public/social?error=noSongInDB");
+        exit();
     }
 }
