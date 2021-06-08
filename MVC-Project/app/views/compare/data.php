@@ -1,7 +1,16 @@
 <?php
 
+
+
+
+
 function get_data($title1,$length1,$author1,$coms1,$tags1,$name1,$genre1,$title2,$length2,$author2,$coms2,$tags2,$name2,$genre2)
 {
+  $serverName = "localhost";
+  $dBUsername = "root";
+  $dBPassword = ""; 
+  $dBName = "audiodb";
+  $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 	/*$products = [
 		"book"=>20,
 		"pen"=>10,
@@ -50,8 +59,8 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$name1,$genre1,$title2
       $endArray=array();
 
       $sql = "SELECT * from songs";
-      $nrofelements=mysqli_num_rows($result);
       $result = mysqli_query($conn, $sql);
+      $numberofelements=mysqli_num_rows($result);
       for ($i=0;$i<mysqli_num_rows($result);$i++)
       {array_push($firstArray,1);
         array_push($secondArray,1);}
@@ -192,7 +201,7 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$name1,$genre1,$title2
       //{ okcom1=1;
       //  oktag1=1;
       
-        $sql1="SELECT * FROM SONGS JOIN COMMENTLINKING ON COMMENTLINKING.IDSONG=SONG.ID JOIN TAGLINKING ON COMMENTLINKING.IDSONG=TAGLINKING.IDSONG";
+        $sql1="SELECT * FROM songs JOIN commentlinking ON commentlinking.idsong=song.id JOIN taglinking ON commentlinking.idsong=taglinking.idsong";
         $result1 = mysqli_query($conn, $sql1);
         while($row1 = mysqli_fetch_assoc($result1)) {
             $sql2="SELECT * FROM SONGS JOIN COMMENTLINKING ON COMMENTLINKING.IDSONG=SONG.ID JOIN TAGLINKING ON COMMENTLINKING.IDSONG=TAGLINKING.IDSONG";
@@ -233,12 +242,13 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$name1,$genre1,$title2
                         $a.=$row2["name"];
                         $a.="with a percentage of ";
                         $concat=$a.$c;
-                        array_push($endarray,$concat);}
+                        array_push($endArray,$concat);}
                         $index2++;
                     }
                 $index1++;}
-                $myJSON=json_encode($endarray);
-                return $myJSON; // eventual are alt format
+                // $myJSON=json_encode($endArray);
+                // return $myJSON; // eventual are alt format
+                return $endArray;
   
 
        // for ($j=0;$j<$numberofelements;$j++)
