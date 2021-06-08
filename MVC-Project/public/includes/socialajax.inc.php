@@ -1,20 +1,14 @@
 <?php
 
-$songs[] = "We are the champions";
-$songs[] = "Back in black";
-$songs[] = "Thundestruck";
-$songs[] = "Rap God";
-$songs[] = "Unravel";
-$songs[] = "Gods Plan";
-$songs[] = "Blah Blah Blah";
-$songs[] = "Old Town Road";
-$songs[] = "I See Fire";
-$songs[] = "Billie Jean";
-$songs[] = "Make it Rain";
-$songs[] = "All Time Low";
-$songs[] = "Better Came Along";
-$songs[] = "Godzilla";
-$songs[] = "Way down we go";
+require_once 'dbSongs.inc.php';
+$sql = "SELECT * FROM songs";
+$result = mysqli_query($conn1,$sql);
+$resultCheck = mysqli_num_rows($result);
+if($resultCheck > 0){
+    while ($row = mysqli_fetch_assoc($result)){
+        $songs[] = $row['name'];
+    }
+}
 
 
 //Get Query String
