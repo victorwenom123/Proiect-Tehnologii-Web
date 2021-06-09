@@ -19,8 +19,8 @@ $tags2 = $info[9];
 $genre2 = $info[10];
 $comments2 = $info[11];
 
-// echo "array content: " . $info[0] . " " . $info[1];
-
+ echo "array content: " . $info[0] . " " . $info[1] . $info[2] . " " . $info[3] . $info[4] . " " . $info[5] . $info[6] . " " . $info[7]. $info[8] . " " . $info[9]. $info[10] . " " . $info[11];
+echo"in api afisare";
 
 	echo "in if";
 	// $name1=$_GET['title1'];
@@ -35,7 +35,7 @@ $comments2 = $info[11];
     // $tag2=$_GET['tags2'];
     // $author1=$_GET['author2'];
     // $genre2=$_GET['genre2'];
-	$data = get_data($title1,$length1,$author1,$comments1,$tags1,$title1,$genre1,$title2,$length2,$author2,$comments2,$tags2,$title2,$genre2);
+	$data = get_data($title1,$length1,$author1,$comments1,$tags1,$genre1,$title2,$length2,$author2,$comments2,$tags2,$genre2);
 	
 	if($data==[])
 	{

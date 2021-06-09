@@ -102,3 +102,47 @@ function loginUser($conn, $username, $pwd)
         }
     }
 }
+
+
+function emptyInputSearch($song){
+    $result = false;
+    if (empty($song)) {
+        $result = true;
+    }
+    return $result;
+}
+
+function searchForSong($conn1,$song){
+    $linkYt = "";
+    $exists = false;
+    $scriptfail = false;
+    if(strpos($song,'<script>')!==false){
+        $scriptfail = true;
+        header("location: /MVC-Project/public/social?error=tryedToHack");
+        exit();
+    }
+    $sql = "SELECT * FROM songs";
+    $result = mysqli_query($conn1,$sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0){
+        while ($row = mysqli_fetch_assoc($result)){
+            if(strtolower($song)==strtolower($row['name'])){
+                $linkYt = $row['youtubeLink'];
+                $exists = true;
+            }
+        }
+        if($exists === true){
+            header("location: $linkYt");
+            exit();
+        }
+        else{
+            header("location: /MVC-Project/public/social?error=songNotFound");
+            exit();
+        }
+    }
+    else{
+        header("location: /MVC-Project/public/social?error=noSongInDB");
+        exit();
+    }
+}

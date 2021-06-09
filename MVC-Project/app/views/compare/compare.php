@@ -17,10 +17,18 @@ session_start();
                 <a href="/MVC-Project/public/home">
                     <img src="/MVC-Project/public/css/images/logo.png" alt="logo" class="logo" width="200" height="62">
                 </a>
-                <div class="buttons">
-                    <button class="btn-1" onclick="window.location.href='/MVC-Project/public/home'"><strong>Home</strong></button>
-                    <button class="btn-1" onclick="window.location.href='/MVC-Project/public/login'"><strong>Login / Sign-up</strong></button>
-                </div>
+                <?php
+                if(isset($_SESSION["userid"])) : ?>
+                    <div class="buttons">
+                        <button class="btn-1" onclick="window.location.href='/MVC-Project/public/home'"><strong>Home</strong></button>
+                        <button class="btn-1" onclick="window.location.href='/MVC-Project/public/includes/logout.inc.php'"><strong>Log out</strong></button>
+                    </div>
+                    <?php else : ?>
+                    <div class="buttons">
+                        <button class="btn-1" onclick="window.location.href='/MVC-Project/public/home'"><strong>Home</strong></button>
+                        <button class="btn-1" onclick="window.location.href='/MVC-Project/public/login'"><strong>Login / Sign-up</strong></button>
+                    </div>
+                    <?php endif; ?>
             </div>
             <?php
                      if (isset($_GET["error"])) {
@@ -30,13 +38,13 @@ session_start();
                         }
                     }
                     ?>
-            <form class="forms"  id="form"  method="get">
-                <div class="form-container">
-                    <!--First form-->
+                <form class="forms" id="form" method="get">
+                    <div class="form-container">
+                        <!--First form-->
 
-                 
-                    <div class="formbox1">
-                        <h2>Details for the <span>first song!<span></h2>
+
+                        <div class="formbox1">
+                            <h2>Details for the <span>first song!<span></h2>
                         <div class="form-1" id="f1">
 
                             <div class="row">
@@ -170,8 +178,8 @@ session_start();
             </form>
         </div>
         <script>
-            function changeWindow($newWindow) {
-                window.location.href = $newWindow;
+            function changeWindow(newWindow) {
+                window.location.href = newWindow;
             }
         </script>
         <?php
@@ -211,6 +219,7 @@ session_start();
               $comments2 = $_GET["comments2"];
               checkStr($comments2);
 
+    
               $data = array($title1, $author1, $length1, $tags1, $genre1, $comments1, $title2, $author2, $length2, $tags2, $genre2, $comments2);
               
               if(!empty($title1) &&!empty($author1) &&!empty($length1) &&!empty($tags1) &&!empty($genre1) &&!empty($comments1) &&!empty( $title2) &&!empty($author2) &&!empty($length2) &&!empty($tags2) &&!empty($genre2) &&!empty($comments2)){

@@ -18,7 +18,8 @@ create table songs
     zoneType       varchar(100)  null,
     goodForGroups  varchar(100)  null,
     mood           varchar(100)  null,
-    habitatType    varchar(100)  null
+    habitatType    varchar(100)  null,
+    youtubeLink    varchar(200)	 null
 );
 
 create table commentlinking

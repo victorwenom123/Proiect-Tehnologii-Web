@@ -11,7 +11,8 @@ class Compare extends Controller
     public function result()
     {
         
-        $this->view('compare/api',[]);
+        $this->view('compare/results',[]);
     }
+   
 
 }
