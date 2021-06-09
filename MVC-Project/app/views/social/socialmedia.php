@@ -97,47 +97,89 @@
             </form>
             <p style="color:red"><b>Suggestions:</b> <span id="output" style="font-weight:bold; color:blue"></span> </p>
         </div>
+        <?php
+$saudio = "#Saudio";
+$str = "<?xml version='1.0' encoding='UTF-8'?>";
+$str .= "<rss version='2.0'>";
+    $str .= "<channel>";
+        $str .= "<title>Our website</title>";
+        $str .= "<description>Our website</description>";
+        $str .= "<language>en-US</language>";
+        
+        $conn = mysqli_connect("localhost", "root", "", "musicweb");
+        $result = mysqli_query($conn, "SELECT * FROM songs");
+
+        while($row = mysqli_fetch_object($result)){
+            $str .= "<item>";
+                $str .= "<title>" . htmlspecialchars($row->name) . "</title>";
+                $str .= "<description>" . htmlspecialchars($row->description) . "</description>";
+                $str .= "<author>" . htmlspecialchars($row->author) . "</author>";
+                $str .= "<link>" . htmlspecialchars($row->youtubeLink) . "</link>";
+                $str .= "<tag>" . $saudio . "</tag>";
+            $str .= "</item>";
+        }
+    
+    $str .= "</channel>";
+$str .= "</rss>";
+
+file_put_contents("rss.xml",$str);
+?>
         <div class="newsfeed">
             <div class="news-head">
                 <h4>Newsfeed</h4>
             </div>
-            <div class="card">
-                <div class="picture"></div>
-                <div class="content">
-                    <div class="hrader">
-                        <div class="profile-pic"></div>
-                        <div class="details">
-                            <p class="name">Song-recommander-bot</p>
-                            <p class="posted">1 day ago</p>
-                        </div>
-                    </div>
-                    <div class="desc">
-                        <!--Random text generate-->
-                        In show dull give need so held. One order all scale sense her gay style wrote. Incommode our not one ourselves residence. Shall there whose those stand she end. So unaffected partiality indulgence dispatched to of celebrated remarkably. Unfeeling are
-                        had allowance own perceived abilities.<br> Started his hearted any civilly. So me by marianne admitted speaking. Men bred fine call ask. Cease one miles truth day above seven. Suspicion sportsmen provision
-                        suffering mrs saw engrossed something. Snug soon he on plan in be dine some.
-                    </div>
-                    <div class="tags">
-                        <span>#saudio</span>
-                        <span>#project</span>
-                    </div>
+            <?php
+    $domOBJ = new DOMDocument();
+    $domOBJ->load("rss.xml");
+    
+    $content = $domOBJ->getElementsByTagName("item");
+    
 
-                    <div class="footer">
-                        <div class="like">
-                            <img src="/MVC-Project/public/css/images/like.png" alt="like" width="20" height="20">
-                            <span>120k</span>
-                        </div>
-                        <div class="comment">
-                            <img src="/MVC-Project/public/css/images/com.png" alt="comm" width="20" height="20">
-                            <span>20k</span>
-                        </div>
-                        <div class="share">
-                            <img src="/MVC-Project/public/css/images/share.png" alt="share" width="20" height="20">
-                            <span>13k</span>
-                        </div>
-                    </div>
+    foreach( $content as $data)
+    {
+        $title = $data->getElementsByTagName("title")->item(0)->nodeValue;
+        $description = $data->getElementsByTagName("description")->item(0)->nodeValue;
+        $author = $data->getElementsByTagName("author")->item(0)->nodeValue;
+        $tag = $data->getElementsByTagName("tag")->item(0)->nodeValue;
+        $link = $data->getElementsByTagName("link")->item(0)->nodeValue;
+        echo "<div class='card'>
+        <div class='picture'></div>
+        <div class='content'>
+            <div class='hrader'>
+                <div class='profile-pic'></div>
+                <div class='details'>
+                    <p class='name'>Song-recommander-bot</p>
+                    <p class='posted'>1 day ago</p>
                 </div>
             </div>
+            <div class='desc'>
+                <strong> $author - $title </strong><br>
+                <!--Random text generate-->
+                $description<br>
+                $link
+            </div>
+            <div class='tags'>
+                $tag
+            </div>
+
+            <div class='footer'>
+                <div class='like'>
+                    <img src='/MVC-Project/public/css/images/like.png' alt='like' width='20' height='20'>
+                    <span>120k</span>
+                </div>
+                <div class='comment'>
+                    <img src='/MVC-Project/public/css/images/com.png' alt='comm' width='20' height='20'>
+                    <span>20k</span>
+                </div>
+                <div class='share'>
+                    <img src='/MVC-Project/public/css/images/share.png' alt='share' width='20' height='20'>
+                    <span>13k</span>
+                </div>
+            </div>
+        </div>
+    </div>";
+    }
+    ?>
             <div class="card">
                 <div class="picture"></div>
                 <div class="content">
@@ -179,6 +221,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
