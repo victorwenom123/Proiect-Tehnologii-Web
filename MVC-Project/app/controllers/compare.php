@@ -13,5 +13,6 @@ class Compare extends Controller
         
         $this->view('compare/results',[]);
     }
+   
 
 }

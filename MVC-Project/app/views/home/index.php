@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +16,16 @@
             <a href="/MVC-Project/public/home">
                 <img src="/MVC-Project/public/css/images/logo.png" alt="logo" class="logo" width="200" height="62">
             </a>
+            <?php
+             if(isset($_SESSION["userid"])) : ?>
+            <div class="navbarButtons">
+            <button class="btn-1" onclick="window.location.href='/MVC-Project/public/includes/logout.inc.php'"><strong>Log out</strong></button>
+            <button class="btn-1" onclick="window.location.href='/MVC-Project/public/social'"><strong>Profile</strong></button>
+            </div>
+             <?php else : ?>
             <button class="btn-1" onclick="window.location.href='/MVC-Project/public/login'"><strong>Log in</strong></button>
+             <?php endif; ?>
+            <!-- <button class="btn-1" onclick="window.location.href='/MVC-Project/public/login'"><strong>Log in</strong></button> -->
         </div>
         <div class="content">
             <h2>Welcome to our</h2>

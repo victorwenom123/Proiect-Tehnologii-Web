@@ -18,14 +18,6 @@ function invalidUid($name)
     return $result;
 }
 
-function invalidEmail($email)
-{
-    $result = false;
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $result = true;
-    }
-    return $result;
-}
 
 function pwdMatch($pwd, $pwdRepeat)
 {
@@ -38,7 +30,7 @@ function pwdMatch($pwd, $pwdRepeat)
 
 function uidExists($conn, $name, $email)
 {
-    $sql = "SELECT * FROM `users` WHERE `usersName` = ? OR `usersEmail` = ?;";
+    $sql = "SELECT * FROM users WHERE usersName = ? OR usersEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: /MVC-Project/public/login?error=stmtfailed");
@@ -78,7 +70,8 @@ function createUser($conn, $name, $email, $pwd)
     exit();
 }
 
-function emptyInputLogin($username,$pwd){
+function emptyInputLogin($username, $pwd)
+{
     $result = false;
     if (empty($username) || empty($pwd)) {
         $result = true;
@@ -86,26 +79,70 @@ function emptyInputLogin($username,$pwd){
     return $result;
 }
 
-function loginUser($conn, $username, $pwd){
-    $uidExists = uidExists($conn,$username,$username);
+function loginUser($conn, $username, $pwd)
+{
+    $uidExists = uidExists($conn, $username, $username);
+    if ($uidExists === false) {
+        header("location: /MVC-Project/public/login?error=wronglogin");
+        exit();
+    } else {
+        $pwdHashed = $uidExists["usersPwd"];
+        $UID = $uidExists["usersId"];
+        $UNAME = $uidExists["usersName"];
+        $checkPwd = password_verify($pwd, $pwdHashed);
+        if ($checkPwd === false) {
+            header("location: /MVC-Project/public/login?error=wronglogin");
+            exit();
+        } else if ($checkPwd === true) {
+            session_start();
+            $_SESSION["userid"] = $UID;
+            $_SESSION["username"] = $UNAME;
+            header("location: /MVC-Project/public/home?error=loginsuceed");
+            exit();
+        }
+    }
+}
 
-    if ($uidExists === false){
-        header("locaton: /MVC-Project/public/login?error=wronglogin");
+
+function emptyInputSearch($song){
+    $result = false;
+    if (empty($song)) {
+        $result = true;
+    }
+    return $result;
+}
+
+function searchForSong($conn1,$song){
+    $linkYt = "";
+    $exists = false;
+    $scriptfail = false;
+    if(strpos($song,'<script>')!==false){
+        $scriptfail = true;
+        header("location: /MVC-Project/public/social?error=tryedToHack");
         exit();
     }
+    $sql = "SELECT * FROM songs";
+    $result = mysqli_query($conn1,$sql);
+    $resultCheck = mysqli_num_rows($result);
 
-    $pwdHashed = $uidExists["usersPwd"];
-    $checkPwd = password_verify($pwd,$pwdHashed);
-
-    if($checkPwd === false){
-        header("locaton: /MVC-Project/public/login?error=wronglogin");
-        exit();
+    if($resultCheck > 0){
+        while ($row = mysqli_fetch_assoc($result)){
+            if(strtolower($song)==strtolower($row['name'])){
+                $linkYt = $row['youtubeLink'];
+                $exists = true;
+            }
+        }
+        if($exists === true){
+            header("location: $linkYt");
+            exit();
+        }
+        else{
+            header("location: /MVC-Project/public/social?error=songNotFound");
+            exit();
+        }
     }
-    else if($checkPwd === true){
-        session_start();
-        $_SESSION["userid"] = $uidExists["usersID"];
-        $_SESSION["username"] = $uidExists["usersName"];
-        header("locaton: /MVC-Project/public/home");
+    else{
+        header("location: /MVC-Project/public/social?error=noSongInDB");
         exit();
     }
 }

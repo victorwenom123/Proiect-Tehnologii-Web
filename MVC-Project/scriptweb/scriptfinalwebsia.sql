@@ -11,17 +11,15 @@ create table songs
     name           varchar(100)  null,
     length         int           null,
     author         varchar(100)  null,
-    tagId          int           null,
-    commentId      int           null,
     genre          varchar(100)  null,
     date           date          null,
     age            varchar(100)  null,
     educationLevel varchar(100)  null,
     zoneType       varchar(100)  null,
     goodForGroups  varchar(100)  null,
-    locationId     int           null,
-    mood           varchar(100)          null,
-    habitatType    varchar(100)  null
+    mood           varchar(100)  null,
+    habitatType    varchar(100)  null,
+    youtubeLink    varchar(200)	 null
 );
 
 create table commentlinking

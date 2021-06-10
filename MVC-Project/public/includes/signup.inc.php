@@ -17,10 +17,6 @@ if(isset($_POST["submit"])){
         header("location: /MVC-Project/public/login?error=invalidusername");
         exit();
     }
-    if(invalidEmail($email) !== false){
-        header("location: /MVC-Project/public/login?error=invalidemail");
-        exit();
-    }
     if(pwdMatch($pwd, $pwdRepeat) !== false){
         header("location: /MVC-Project/public/login?error=paswworddontmatch");
         exit();
