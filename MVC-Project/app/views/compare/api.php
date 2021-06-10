@@ -19,10 +19,11 @@ $tags2 = $info[9];
 $genre2 = $info[10];
 $comments2 = $info[11];
 
- echo "array content: " . $info[0] . " " . $info[1] . $info[2] . " " . $info[3] . $info[4] . " " . $info[5] . $info[6] . " " . $info[7]. $info[8] . " " . $info[9]. $info[10] . " " . $info[11];
+ echo "array content: " . $info[0] . " " . $info[1] . $info[2] . " " . $info[3] . $info[4] . " " . $info[5] . $info[6] . " " . $info[7]. $info[8] . " " . $info[9]. $info[10] . " " . $info[11]. "\r\n";
+ 
 echo"in api afisare";
 
-	echo "in if";
+
 	// $name1=$_GET['title1'];
     // $coms1=$_GET['comments1'];
     // $length1=$_GET['length1'];

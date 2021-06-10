@@ -1,11 +1,15 @@
 <?php
 
+
+
+
+
 function get_data($title1,$length1,$author1,$coms1,$tags1,$genre1,$title2,$length2,$author2,$coms2,$tags2,$genre2)
 {
   $serverName = "localhost";
   $dBUsername = "root";
   $dBPassword = ""; 
-  $dBName = "musicweb";
+  $dBName = "audiodb2";
   $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
   // echo "ajunge aici";
   //echo $title1;
@@ -162,7 +166,7 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$genre1,$title2,$lengt
           while ($toktags1 !== false) {
             
            
-            if (strcmp($row["tagname"],$toktags1)==0)
+            if (strcmp(strtolower($row["tagname"]),strtolower($toktags1))==0)
                    $ok=1;
           
             $toktags1 = strtok(",");
@@ -175,7 +179,7 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$genre1,$title2,$lengt
           while ($toktags2 !== false) {
             
            
-            if (strcmp($row["tagname"],$toktags2)==0)
+            if (strcmp(strtolower($row["tagname"]),strtolower($toktags2))==0)
                    $ok=1;
           
             $toktags2 = strtok(",");
@@ -187,7 +191,7 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$genre1,$title2,$lengt
            // $index1++;
         }
       } else {
-        // echo "0 results";
+        echo "0 results";
       }
     //  echo $firstArray[0];
     //  echo $firstArray[1];
@@ -225,17 +229,17 @@ function get_data($title1,$length1,$author1,$coms1,$tags1,$genre1,$title2,$lengt
                 $description[$row1["id"]][$row2["id"]]=1;*/
                 // echo $row1["commentName"];
                 // echo "nu";
-            if (strcmp($row1["commentName"],$row2["commentName"])==0 && $firstArray[(int)$row1["id"]]!=-1 && $secondArray[(int)$row2["id"]]!=-1 && strcmp($row1["id"],$row2["id"])!=0)
+            if (strcmp(strtolower($row1["commentName"]),strtolower($row2["commentName"]))==0 && $firstArray[(int)$row1["id"]]!=-1 && $secondArray[(int)$row2["id"]]!=-1 && strcmp($row1["id"],$row2["id"])!=0)
                 $commM[$row1["id"]][$row2["id"]]=1;
-            if (strcmp($row1["tagName"],$row2["tagName"])==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
+            if (strcmp(strtolower($row1["tagName"]),strtolower($row2["tagName"]))==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
                 $tagM[$row1["id"]][$row2["id"]]=1;
-            if (strcmp($row1["length"],$row2["length"])==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
+            if (strcmp(strtolower($row1["length"]),strtolower($row2["length"]))==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
                 $lengthM[$row1["id"]][$row2["id"]]=1;
-            if (strcmp($row1["author"],$row2["author"])==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
+            if (strcmp(strtolower($row1["author"]),strtolower($row2["author"]))==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
                 $authorM[$row1["id"]][$row2["id"]]=1;
-            if (strcmp($row1["genre"],$row2["genre"])==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
+            if (strcmp(strtolower($row1["genre"]),strtolower($row2["genre"]))==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
              $genreM[$row1["id"]][$row2["id"]]=1;
-            if (strcmp($row1["name"],$row2["name"])==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
+            if (strcmp(strtolower($row1["name"]),strtolower($row2["name"]))==0 && $firstArray[$row1["id"]]!=-1 && $secondArray[$row2["id"]]!=-1 && $row1["id"]!=$row2["id"])
                 $titleM[$row1["id"]][$row2["id"]]=1;
 $index2++;
 
@@ -251,7 +255,7 @@ $index2++;
         for ( $j=0;$j<$numberofelements;$j++)
            if ($firstArray[$i]!=-1 && $secondArray[$j]!=-1 && $i!=$j)
                 {
-                  // echo "intr-adevar";
+                // echo "intr-adevar";
                   $finalMatrix[$i][$j]=($commM[$i][$j]+$tagM[$i][$j]+$lengthM[$i][$j]+$authorM[$i][$j]+$genreM[$i][$j]+$titleM[$i][$j])/6;
                 // echo $finalMatrix[$i][$j];
               }
@@ -259,9 +263,7 @@ $index2++;
         $index1=0;
         $result1 = mysqli_query($conn, $sql1);
         $k=0;
-        
-        if ($result1){
-          
+        if ($result1)
                 while($row1 = mysqli_fetch_assoc($result1)) {$index2=0;
                     $sql2="SELECT * FROM SONGS";
                     $result2 = mysqli_query($conn, $sql1);
@@ -285,14 +287,8 @@ $index2++;
                   // echo $value;
                 // $myJSON=json_encode($endArray);
                 // return $myJSON; // eventual are alt format
-                if(empty($endaArray)){
-                  return "empty";
-                }
-                else{
-                  return $endArray;
-                }
-                
-                  }
+                return $endArray;
+  
 
        // for ($j=0;$j<$numberofelements;$j++)
       /*  {if ($firstArray[$i]!=-1 && $secondArray[$j]!=-1 && $i!=$j)

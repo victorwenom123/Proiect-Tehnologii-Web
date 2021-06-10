@@ -1,6 +1,6 @@
 <?php
 session_start();
-$uri= $_SERVER["REQUEST_URI"];
+// $uri= $_SERVER["REQUEST_URI"];
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -17,12 +17,10 @@ $uri= $_SERVER["REQUEST_URI"];
                     body: json
                 });
                 let resultJSON = await response.json();
-                const obj = JSON.stringify(resultJSON);
                 console.log(resultJSON);
-                console.log(obj);
-
-
-                let newElem = document.createElement("p");
+                // const obj = JSON.parse(resultJSON);
+                // console.log(obj);
+                let newElem = document.createElement("h1");
                 newElem.textContent = resultJSON.data;
                 document.getElementById("content").appendChild(newElem);
 
@@ -67,10 +65,7 @@ $uri= $_SERVER["REQUEST_URI"];
 
 
 
-                    <h1>This page will show the results of the songs compared!</h1>
-                    <h2>The similarities between the two songs introduced in the earlier form will be displayed here!</h2>
-                    <h2>At the same time, the similarities between the two songs and other songs in a database will be displayed also here!
-                    </h2>
+                
             </div>
         </div>
 

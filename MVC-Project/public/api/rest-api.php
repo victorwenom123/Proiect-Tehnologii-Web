@@ -54,7 +54,7 @@ if($requestMethod=="POST"){
         
         $response["status_message"]="Payload is empty";
 	        $response["data"]="empty";
-            http_response_code(404);
+            http_response_code(402);
 	        $json_response = json_encode($response);
 	        echo $json_response; 
     } 
