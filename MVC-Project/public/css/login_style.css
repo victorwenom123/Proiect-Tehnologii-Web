@@ -1,0 +1,214 @@
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    
+    .hero {
+        height: 100%;
+        width: 100%;
+        background-image: url(/MVC-Project/public/css/images/bg5_sml_3000_2000.jpg);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    
+    .logo {
+        width: 200px;
+        cursor: pointer;
+    }
+    
+    .navbar {
+        width: 85%;
+        height: 15%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .btn-2 {
+        font-size: 2.5vmin;
+        padding: 8px 15px;
+        position: relative;
+        color: rgba(224, 222, 222, 1);
+        margin-right: 2vmin;
+        background: rgb(43, 69, 117, 0.8);
+        border: 3px solid rgba(224, 222, 222, 1);
+        border-radius: 10vmin;
+        box-shadow: inset 0 0 0 0 rgb(43, 69, 117, 1);
+        outline: none;
+        cursor: pointer;
+        transition: ease-out 0.3s;
+    }
+    
+    .btn-2:hover {
+        color: rgb(43, 69, 117, 1);
+        box-shadow: inset 300px 0 0 0 white;
+    }
+    
+    .form-container {
+        padding-top: 5vmin;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20%;
+    }
+    
+    .form-box {
+        width: 30vw;
+        height: 70vh;
+        position: relative;
+        background: white;
+        overflow: hidden;
+    }
+    
+    .button-box {
+        width: 45%;
+        margin: 8vh auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px rgb(71, 120, 167);
+        border-radius: 30px;
+    }
+    
+    .btn-1 {
+        font-size: 0.9vw;
+        margin-right: 0;
+        color: black;
+        padding: 3% 3%;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+    }
+    
+    .btn-1:nth-child(2) {
+        margin-right: 3vw;
+        margin-left: 0.5vw;
+    }
+    
+    #btn {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background: rgba(37, 78, 155, 0.8);
+        border-radius: 30px;
+        transition: .5s;
+    }
+    
+    .input-group {
+        top: 30%;
+        position: absolute;
+        width: 70%;
+        transition: .5s;
+    }
+    
+    .input-field {
+        width: 100%;
+        padding: 2vmin 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid rgb(29, 28, 28);
+        background: transparent;
+    }
+    
+     ::placeholder {
+        color: rgb(29, 28, 28);
+    }
+    
+    .submit-button {
+        width: 85%;
+        font-size: 0.8vw;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        background: rgba(37, 78, 155, 0.8);
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+    }
+    
+    label {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        padding: 5vmin 5%;
+        padding-left: 0;
+    }
+    
+    input[type='checkbox'] {
+        margin-right: 5%;
+    }
+    
+    span {
+        color: rgb(29, 28, 28);
+        font-size: 2vmin;
+    }
+    
+    #login {
+        left: 15%;
+    }
+    
+    #register {
+        left: 115%;
+    }
+    
+    @media screen and (max-width:1200px) {
+        .hero {
+            background: rgba(18, 25, 33, 1);
+        }
+        .btn-2 {
+            font-size: 2.5vmin;
+            margin-top: 3vmin;
+        }
+        .logo {
+            margin-right: 10vmin;
+        }
+        .btn-1 {
+            font-size: calc((1.3vmin + 0.5vmax)/2*2);
+            margin-right: 0;
+            padding: 3% 1%;
+        }
+        .btn-1:nth-child(2) {
+            margin-right: 10vw;
+            margin-left: 10%;
+        }
+        .form-box {
+            font-size: 2vh;
+            width: 80vw;
+            height: 70vh;
+        }
+         ::placeholder {
+            font-size: 3vmin;
+            line-height: 3.1vmin;
+        }
+        span {
+            font-size: 3vmin;
+        }
+        input[type='checkbox'] {
+            width: 2vmin;
+            height: 2vmin;
+        }
+        .submit-button {
+            font-size: calc((1.3vmin + 0.5vmax)/2*2.5);
+        }
+        .form-container {
+            padding-right: 0;
+            justify-content: space-evenly;
+        }
+        /*
+   
+    .input-field {
+        width: 100%;
+        padding: 10px 0;
+        margin: 5px 0;
+    }
+ 
+
+    */
+    }
