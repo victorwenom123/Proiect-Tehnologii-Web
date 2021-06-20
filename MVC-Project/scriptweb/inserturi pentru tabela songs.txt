@@ -1,8 +1,0 @@
-INSERT INTO `songs` (`id`, `description`, `name`, `length`, `author`, `genre`, `date`, `age`, `educationLevel`, `zoneType`, `goodForGroups`, `mood`, `habitatType`, `youtubeLink`) VALUES 
-('1', NULL, 'We are The Champions', '3', 'Queen', 'Rock', '2011-08-01', '30', 'High', NULL, 'Yes', 'Relaxed Happy', NULL, 'https://www.youtube.com/watch?v=KXw8CRapg7k'), 
-('2', NULL, 'Thunderstruck', '5', 'AC/DC', NULL, NULL, 'Rock', 'High', NULL, NULL, 'Happy Tired Reflective', NULL, 'https://www.youtube.com/watch?v=v2AC41dglnM');
-
-INSERT INTO `songs` (`id`, `description`, `name`, `length`, `author`, `genre`, `date`, `age`, `educationLevel`, `zoneType`, `goodForGroups`, `mood`, `habitatType`, `youtubeLink`) VALUES 
-('9', NULL, 'Unravel', NULL, 'Tokyo Ghoul', 'R&B', '2014-07-15', '7', 'Low', 'Mountain', 'No', 'Sad Reflective', NULL, 'https://www.youtube.com/watch?v=Fve_lHIPa-I'), 
-('10', NULL, 'A lalala long', NULL, 'Bob Marley', 'Reggae', '2010-03-15', '11', 'Low', NULL, 'yes', 'Happy Relaxed Reflective Humorous', 'Rural', 'https://www.youtube.com/watch?v=-JhwxTen6yA'), 
-('11', NULL, 'Billie Jean', '5', 'Michael Jackson', 'Pop', '2009-10-03', '12', 'Low', NULL, 'Yes', 'Happy', 'Urban', 'https://www.youtube.com/watch?v=Zi_XLOBDo_Y')
