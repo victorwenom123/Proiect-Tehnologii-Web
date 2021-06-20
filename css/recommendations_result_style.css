@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(43, 69, 117, 1);
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url(load_resource.php?file=bg_landscape_3000_2000.jpg&type=image);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-page {
+    color: rgba(224, 222, 222, 1);
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+h2 {
+    font-size: 4.5vmin;
+    color: rgb(43, 69, 117, 1);
+}
+
+h1 {
+    font-size: 8vmin;
+    margin-top: 15vmin;
+    line-height: 9vmin;
+    margin-bottom: 13vmin;
+}
+
+.logo {
+    width: 200px;
+    cursor: pointer;
+    margin-right: 10vmin;
+}
+
+.navbar {
+    padding-top: 4vh;
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    font-size: 2.5vmin;
+    color: rgba(224, 222, 222, 1);
+    padding: 8px 15px;
+    margin: 2vmin;
+    background: rgb(43, 69, 117, 0.8);
+    border: 3px solid rgba(224, 222, 222, 1);
+    border-radius: 10vmin;
+    outline: none;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.btn-1:hover {
+    color: rgb(43, 69, 117, 1);
+    box-shadow: inset 300px 0 0 0 white;
+}
+
+@media screen and (max-width:1200px) {
+    .hero {
+        background: rgba(18, 25, 33, 1);
+    }
+    .btn-1 {
+        font-size: 2.5vmin;
+        border-radius: 10vmin;
+    }
+}

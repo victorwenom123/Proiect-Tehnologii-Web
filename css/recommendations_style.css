@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(43, 69, 117, 1);
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    background-image: url(load_resource.php?file=bg_landscape_rec.jpg&type=image);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    width: 200px;
+    cursor: pointer;
+    margin-right: 10vmin;
+}
+
+.navbar {
+    padding-top: 4vh;
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    font-size: 2.5vmin;
+    color: rgba(224, 222, 222, 1);
+    padding: 8px 15px;
+    margin: 2vmin;
+    background: rgb(43, 69, 117, 0.8);
+    border: 3px solid rgba(224, 222, 222, 1);
+    border-radius: 10vmin;
+    outline: none;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.send-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-2 {
+    position: relative;
+    margin-right: 0;
+    box-shadow: inset 0 0 0 0 rgb(43, 69, 117, 1);
+    transition: ease-out 0.3s;
+    font-size: 1.7vmax;
+}
+
+.btn-1:hover {
+    color: rgb(43, 69, 117, 1);
+    box-shadow: inset 300px 0 0 0 white;
+}
+
+.btn-2:hover {
+    color: rgb(43, 69, 117, 1);
+    box-shadow: inset 0 0 300px 0 white;
+}
+
+.form-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.forms {
+    background-color: rgb(43, 69, 117, 1);
+    border-radius: 5vmin;
+    width: 45vw;
+    height: 130vh;
+    padding: 5vh 0 10vh 0;
+    margin: 10%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 4vmin;
+    padding: 5% 20% 5% 20%;
+    color: rgba(241, 239, 239, 1);
+}
+
+.forms .formbox1 {
+    position: relative;
+    display: inline-block;
+    padding: 5% 15% 5% 15%;
+}
+
+input,
+select,
+textarea {
+    color: gray;
+    font-size: 2.3vh;
+    width: 100%;
+    padding: 1vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    font-style: italic;
+    font-size: 2.5vh;
+    padding: 1.5vh 1.5vh 1.5vh 0;
+    display: inline-block;
+    color: rgb(213, 219, 226);
+}
+
+@media screen and (max-width:1200px) {
+    .hero {
+        background: rgba(18, 25, 33, 1);
+    }
+    .forms {
+        width: 85vw;
+    }
+    input,
+    select,
+    textarea {
+        font-size: 1.9vh;
+    }
+    label {
+        font-size: 2.1vh;
+        padding: 1.5vh 1.5vh 1.5vh 0;
+    }
+    .btn-1 {
+        font-size: 2.5vmin;
+        border-radius: 10vmin;
+    }
+}
