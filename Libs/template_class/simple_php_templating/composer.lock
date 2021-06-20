@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "81f015a03bf7a0fa5b8855cec8553ea4",
+    "packages": [
+        {
+            "name": "wol-soft/php-micro-template",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wol-soft/php-micro-template.git",
+                "reference": "21ee36cde22d2be93d19ee728af92b73dd0c3ed2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wol-soft/php-micro-template/zipball/21ee36cde22d2be93d19ee728af92b73dd0c3ed2",
+                "reference": "21ee36cde22d2be93d19ee728af92b73dd0c3ed2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPMicroTemplate\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Enno Woortmann",
+                    "email": "enno.woortmann@web.de"
+                }
+            ],
+            "description": "A minimalistic templating engine for PHP",
+            "homepage": "https://github.com/wol-soft/php-micro-template",
+            "time": "2020-06-29T09:41:32+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
