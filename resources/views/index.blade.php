@@ -17,7 +17,7 @@
         @if($session["status"] == "true")
             <div class="buttons">
                 <button class="btn-1" onclick="window.location.href='api-rest'"><strong>API REST</strong></button>
-                <button class="btn-1" onclick="window.location.href='home'"><strong>Home</strong></button>
+                <!--<button class="btn-1" onclick="window.location.href='home'"><strong>Home</strong></button>-->
                 <button class="btn-1" onclick="window.location.href='logout'"><strong>Log out</strong></button>
                    @if($session["user_rank"] == "admin")
                     <button class="btn-1" onclick="window.location.href='admin'"><strong>Admin</strong></button>

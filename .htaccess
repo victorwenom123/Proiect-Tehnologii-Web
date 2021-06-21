@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(?!app/).*$ app/$0 [L,NC]

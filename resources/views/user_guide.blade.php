@@ -51,31 +51,28 @@
             Utilizatorul în momentul în care intra pe pagina principala a aplicației acesta poate observa  în colțul din dreapta sus butonul de login 
             unde isi poate creea un cont sau se poate autentifica pe acplicația noastră. În momentul în care utilizatorul este redirectionalt pe pagina 
             de login acesta observa un chenar alb de unde poate alege daca doreste sa se autentifice sau să se înregistreze la sistem.<br>
-            <a href="https://imgur.com/BAjrfRr">screenshot-login</a><br>
-            <a href="https://imgur.com/ZpEdani">screenshot-register</a><br>
+            <a href="https://imgur.com/MHPgpFi">screenshot-login</a><br>
+            <a href="https://imgur.com/sHofB8M">screenshot-register</a><br>
         </p>
         <h3><span>2.2) </span>Compare-normal</h3>
         <p>
             Pentru a compara melodii, utilizatorul trebuie sa intre pe pagina de comparare, si poate realiza acest lucrtu apasând pe butonul 
             "Compare songs!" de pe pagina "Home".<br>
             Odata ce utilizatorul este redirecționat pe pagina de "Compare" utilizatorului îi apare pe ecran un formular în care trebuie să 
-            introduca numele melodiilor și numele autorilor.  <a href="https://imgur.com/RPJjiP0">screenshot-compare-form</a><br>
+            introduca numele melodiilor și numele autorilor.  <a href="https://imgur.com/JMcKSgr">screenshot-compare-form</a><br>
             În momentul în care utilizatorului completeaza formularul și apasă pe butonul "SEND THE INFORMATION" i se calculeaza similaritatea 
-            dintre cele doua melodii, pe baza informațiilor din <a href="https://www.last.fm/music">Last.fm API</a> (daca melodia nu se afla pe Last.fm atunci similaritatea nu poate fi calculată și se vor cere alte informații).<br>
-            <a href="https://imgur.com/URwTt6p">screenshot-compare-completed</a><br>
-            <a href="https://imgur.com/lcAVhX2">screenshot-compare-result</a><br>
+            dintre cele doua melodii, pe baza informațiilor din baza de date (daca melodia nu se afla in baze de date nu pot fi facute calcule).<br>
+            <a href="https://imgur.com/qiE6WZZ">screenshot-compare-completed</a><br>
+            <a href="https://imgur.com/BvrStwA">screenshot-compare-result</a><br>
             După ce similaritatea este calculată utilizatorul poate merge pe pagina de "Home" sau să calculeze altă similaritate. 
         </p>
         <h3><span>2.3) </span>Compare-API</h3>
         <p>
-            Aceasta fereastră este folostită ca un testing pentru programatori, e folostit pentru a testa REST API-ul cu care se compară melodiile.<br>
-            Pentru a accesa aceasta zonă utilizatorul trebuie să apese pe butonul "API REST" de pe pagina "HOME". funcționalitățile sunt aceleași ca și la pagina de comparare.<br>
-            De asemenea apăsând pe butonul "TEST /api/get-songs" se vor afișa pe ecran toate melodiile din baza de date in format JSON. 
-            <a href="https://imgur.com/cBE03tv">screenshot-compare-form</a><br>
-            <a href="https://imgur.com/6Hdhjvo">screenshot-compare-completed</a><br>
-            <a href="https://imgur.com/fjN4zX6">screenshot-compare-result</a><br>
-            <a href="https://imgur.com/goJO9If">screenshot-compare-testAPI1</a><br>
-            <a href="https://imgur.com/DQVAIgM">screenshot-compare-testAPI2</a><br>
+            Pentru a compara melodii folosind servicii Rest-API utilizatorul trebuie să apese pe butonul "API REST" de pe pagina home unde poate 
+            face acelasi lucru ca pe pagina de compare, numai ca se foloseste un REST API.<br>
+            <a href="https://imgur.com/YTf5vdi">screenshot-compare-form</a><br>
+            <a href="https://imgur.com/d51xB8O">screenshot-compare-completed</a><br>
+            <a href="https://imgur.com/BkIU1DD">screenshot-compare-result</a><br>
         </p>
         <h3><span>2.4) </span>Recomandations</h3>
         <p>
@@ -84,23 +81,22 @@
             câmpuri din formular trebuie completat obligatoriu). În 
             funcție de ce completează în acest formular, utilizatorul primește anumite recomandări din baza de date. Aceste recomandări vor 
             fi postate pe Feed-ul utilizatorului însoțit de tagul #saudio.<br>
-            <a href="https://imgur.com/S006FPE">screenshot-recomandation-form1</a><br>
-            <a href="https://imgur.com/njud3v5">screenshot-recomandation-form2</a><br>
-            <a href="https://imgur.com/bI8uVfU">screenshot-recomandation-completed</a><br>
-            <a href="https://imgur.com/FowTEqc">screenshot-recomandation-result</a><br>
+            <a href="https://imgur.com/qV66UeT">screenshot-recomandation-form1</a><br>
+            <a href="https://imgur.com/z7dY6ry">screenshot-recomandation-form2</a><br>
+            <a href="https://imgur.com/qasVZBS">screenshot-recomandation-completed</a><br>
+            <a href="https://imgur.com/CJ4vcEu">screenshot-recomandation-result</a><br>
         </p>
         <h3><span>2.5) </span>Feed</h3>
         <p>
             Pentru ca utilizatorul sa ajungă pe pagina de "Feed", trebuie ca de pe pagina "Home" să apese pe butonul "My Feed".<br>
             Acolo vor fi postările cu recomandările pe care acesta le-a primit în trecut dar și gândurile pe care acesta le poate posta.<br>
             O postare poate fi ștearsă dacă se apară pe butonul "Remove" din dreptul fiecărei postări.<br>
-            <a href="https://imgur.com/haawwtF">screenshot-feed1</a><br>
-            <a href="https://imgur.com/13VrhM9">screenshot-feed2</a><br>
-            <a href="https://imgur.com/2TrLNsr">screenshot-feed3</a><br>
+            <a href="https://imgur.com/QnOksvP">screenshot-feed1</a><br>
+            <a href="https://imgur.com/B3sGMJj">screenshot-feed2</a><br>
+            <a href="https://imgur.com/QxPioyA">screenshot-feed3</a><br>
         </p>
         <h3>Atenție! Un user poate vedea feed-ul doar daca e logat la aplicație.
-        Restul funcționalităților pot fi utilizate și fără a fi logat.<br>
-            De asemenea comparările simple merg pe un API de la Last.fm pe când celelalte funcționalitați folosesc un API propriu.</h3>
+        Restul funcționalităților pot fi utilizate și fără a fi logat.</h3>
     </section>
 
 </section>
@@ -110,18 +106,16 @@
     <p>
         Un administrator vede un buton în plus față de ceilalți utilizatori, butonul "Admin", care îl redirecționează pe utilizator la un meniu 
         special in care poate modifica baza de date.<br>
-        <a href="https://imgur.com/1ToF0QT">screenshot-admin-home</a><br>
-        <a href="https://imgur.com/kkT1iq2">screenshot-admin-menu</a><br>
+        <a href="https://imgur.com/EconRRN">screenshot-admin-home</a><br>
+        <a href="https://imgur.com/CGVLJhi">screenshot-admin-menu</a><br>
         În acest meniu special pentru administrator se pot face urmatoarele funcționalități.<br>
-        -- Users: pe aceasta fereastră se va genera un tabel din baza de date cu informații despre fiecare utilzator înregistrat în DB. 
-        <a href="https://imgur.com/VWv4kfy">screenshot-admin-users</a><br>
-        -- Songs: pe aceasta fereastră se va genera un tabel din baza de date cu informații despre fiecare melodie înregistrată în DB. 
-        <a href="https://imgur.com/aghJmQM">screenshot-admin-songs</a><br>
+        -- Users: pe aceasta fereastră se va genera un tabel din baza de date cu informații despre fiecare utilzator înregistrat în DB. <a href="https://imgur.com/0DOy2ce">screenshot-admin-users</a><br>
+        -- Songs: pe aceasta fereastră se va genera un tabel din baza de date cu informații despre fiecare melodie înregistrată în DB. <a href="https://imgur.com/NKAvnvs">screenshot-admin-songs</a><br>
         -- Import .CSV: pe această fereastră adminul poate importa un fișier .csv in care se afla date despre diverse melodii (avand un anumit format) 
-        iar melodiile din fișier vor fi înregistrate în baza de date (în caz că nu există deja). <a href="https://imgur.com/nx4XAni">screenshot-admin-importCSV</a><br>
+        iar melodiile din fișier vor fi înregistrate în baza de date (în caz că nu există deja). <a href="https://imgur.com/s4RzCWe">screenshot-admin-importCSV</a><br>
         -- Add New Song: in această fereastră adminului îi este generat un formular cu care poate adăuga melodii noi în baza de date (toate câmpurile din acest formular sunt obligatorii).
-        <a href="https://imgur.com/UokQ74f">screenshot-admin-addSong1</a><br>
-        <a href="https://imgur.com/t52Kdk9">screenshot-admin-addSong2</a><br>
+        <a href="https://imgur.com/9miVOBE">screenshot-admin-importCSV</a><br>
+        <a href="https://imgur.com/VBr3fBp">screenshot-admin-importCSV</a><br>
     </p>
 </section>
 <section id="ref-ResurseExterne">
@@ -131,7 +125,7 @@
     </p>
     <ul>
         <li>
-            <a href="#ref-Scholarly">Scholarly HTML</a>, cu ajutorul căruia a fost realizat user guide-ului.
+            <a href="#ref-Scholarly">Scholarly HTML</a>, cu ajutorul căruia a fost realizat raportul.
         </li>
         <li>
             <a href="#ref-Imgur">Imgur</a>, site pe care au fost încărcate screenshot-urile.

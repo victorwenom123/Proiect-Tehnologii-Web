@@ -42,19 +42,19 @@
                         <p style="text-align: center;"> <h2 style="color:black;">API Rest </h2></p>
                         <p style="text-align: left;"><h2 style="color:black;">Compare Songs -> POST -> <b>/api/compare-songs</b> </h2></p>
                         <form action="{{$appUrl}}/api-rest/compare" method="POST">
-                           <div clas="form-group">
+                           <div class="form-group">
                                <input type="text" placeholder="First Song Title.." required="true" name="firstSongName">
                            </div>
                             <br/>
-                            <div clas="form-group">
+                            <div class="form-group">
                                 <input type="text" placeholder="First Song Artist" required="true" name="firstSongAuthor">
                             </div>
                             <br/>
-                            <div clas="form-group">
+                            <div class="form-group">
                                 <input type="text" placeholder="Second Song Title" required="true" name="secondSongName">
                             </div>
                             <br/>
-                            <div clas="form-group">
+                            <div class="form-group">
                                 <input type="text" placeholder="Second Song Artist" required="true" name="secondSongAuthor">
                             </div>
                            <p style="text-align: center;"> <button type="submit">TEST /api/compare-songs</button></p>
