@@ -59,10 +59,10 @@
             Pentru a compara melodii, utilizatorul trebuie sa intre pe pagina de comparare, si poate realiza acest lucrtu apasând pe butonul 
             "Compare songs!" de pe pagina "Home".<br>
             Odata ce utilizatorul este redirecționat pe pagina de "Compare" utilizatorului îi apare pe ecran un formular în care trebuie să 
-            introduca numele melodiilor și numele autorilor.  <a href="https://imgur.com/kflswZY">screenshot-compare-form</a><br>
+            introduca numele melodiilor și numele autorilor.  <a href="https://imgur.com/RPJjiP0">screenshot-compare-form</a><br>
             În momentul în care utilizatorului completeaza formularul și apasă pe butonul "SEND THE INFORMATION" i se calculeaza similaritatea 
-            dintre cele doua melodii, pe baza informațiilor din baza de date (daca melodia nu se afla in baze de date nu pot fi facute calcule).<br>
-            <a href="https://imgur.com/Ef2UmmU">screenshot-compare-completed</a><br>
+            dintre cele doua melodii, pe baza informațiilor din <a href="https://www.last.fm/music">Last.fm API</a> (daca melodia nu se afla pe Last.fm atunci similaritatea nu poate fi calculată și se vor cere alte informații).<br>
+            <a href="https://imgur.com/URwTt6p">screenshot-compare-completed</a><br>
             <a href="https://imgur.com/lcAVhX2">screenshot-compare-result</a><br>
             După ce similaritatea este calculată utilizatorul poate merge pe pagina de "Home" sau să calculeze altă similaritate. 
         </p>
@@ -70,9 +70,12 @@
         <p>
             Aceasta fereastră este folostită ca un testing pentru programatori, e folostit pentru a testa REST API-ul cu care se compară melodiile.<br>
             Pentru a accesa aceasta zonă utilizatorul trebuie să apese pe butonul "API REST" de pe pagina "HOME". funcționalitățile sunt aceleași ca și la pagina de comparare.<br>
+            De asemenea apăsând pe butonul "TEST /api/get-songs" se vor afișa pe ecran toate melodiile din baza de date in format JSON. 
             <a href="https://imgur.com/cBE03tv">screenshot-compare-form</a><br>
             <a href="https://imgur.com/6Hdhjvo">screenshot-compare-completed</a><br>
-            <a href="https://imgur.com/Fbz7UVz">screenshot-compare-result</a><br>
+            <a href="https://imgur.com/fjN4zX6">screenshot-compare-result</a><br>
+            <a href="https://imgur.com/goJO9If">screenshot-compare-testAPI1</a><br>
+            <a href="https://imgur.com/DQVAIgM">screenshot-compare-testAPI2</a><br>
         </p>
         <h3><span>2.4) </span>Recomandations</h3>
         <p>
@@ -96,7 +99,8 @@
             <a href="https://imgur.com/2TrLNsr">screenshot-feed3</a><br>
         </p>
         <h3>Atenție! Un user poate vedea feed-ul doar daca e logat la aplicație.
-        Restul funcționalităților pot fi utilizate și fără a fi logat.</h3>
+        Restul funcționalităților pot fi utilizate și fără a fi logat.<br>
+            De asemenea comparările simple merg pe un API de la Last.fm pe când celelalte funcționalitați folosesc un API propriu.</h3>
     </section>
 
 </section>
