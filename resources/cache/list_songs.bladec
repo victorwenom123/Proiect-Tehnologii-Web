@@ -1,0 +1,16 @@
+<?php echo $this->runChild("admin_header"); ?>
+<div class="container-fluid">
+ <div class="row">
+ <div class="col-12">
+ <h5>All songs</h5>
+
+ <?php if($error): ?>
+ <?php echo \htmlentities($error, ENT_QUOTES, 'UTF-8', false); ?>
+
+ <?php else: ?>
+ <div style="overflow-x:auto"><?php echo $listHTML; ?></div>
+ <?php endif; ?>
+ </div>
+ </div>
+</div>
+<?php echo $this->runChild("admin_footer"); ?>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title><?php echo \htmlentities($appName, ENT_QUOTES, 'UTF-8', false); ?>  - Comparison Results</title>
+ <link rel="stylesheet" href="load_resource.php?file=compare_style.css&type=css">
+</head>
+<body>
+<div class="hero">
+ <div class="navbar">
+ <a href="home">
+ <img src="load_resource.php?file=logo.png&type=image" alt="logo" class="logo" width="200" height="62">
+ </a>
+ <?php if($session["status"] == "true"): ?>
+ <div class="buttons">
+ <button class="btn-1" onclick="window.location.href='home'"><strong>Home</strong></button>
+ <button class="btn-1" onclick="window.location.href='logout'"><strong>Log out</strong></button>
+ </div>
+ <?php else: ?>
+ <div class="buttons">
+ <button class="btn-1" onclick="window.location.href='home'"><strong>Home</strong></button>
+ <button class="btn-1" onclick="window.location.href='login'"><strong>Login / Sign-up</strong></button>
+ </div>
+ <?php endif; ?>
+
+ </div>
+ <form class="forms">
+ <div class="form-container">
+ <!--First form-->
+ <div class="formbox1" style="text-align:center; margin:auto;color:white;">
+ <h2>Compare results</h2>
+
+
+ <?php if($results): ?>
+ <h3><?php echo \htmlentities($results["songs"], ENT_QUOTES, 'UTF-8', false); ?></h3>
+ <br/>
+ <hr/>
+ <br/>
+ <b>Artist similarity</b>: <?php echo \htmlentities($results["artist_similarity"], ENT_QUOTES, 'UTF-8', false); ?> <br/>
+ <b>Song Similarity</b>:<?php echo \htmlentities($results["song_similarity"], ENT_QUOTES, 'UTF-8', false); ?> <br/>
+ <b>Tag similarity</b>: <?php echo \htmlentities($results["tags_similarity"], ENT_QUOTES, 'UTF-8', false); ?> <br/>
+ <b>Found Tags:</b> <?php echo \htmlentities($results["found_tags"], ENT_QUOTES, 'UTF-8', false); ?> <br/>
+ <?php else: ?>
+ Could not find any suitable matches for your songs.
+ Please retry using a different name and artist combination.
+ <?php endif; ?>
+
+ <br/>
+ <br/>
+ <hr/>
+ <h4>powered by Last.fm</h4>
+
+ </div>
+ <!--Second form-->
+ </div>
+ <div class="send-button">
+ <a href="<?php echo \htmlentities($appUrl, ENT_QUOTES, 'UTF-8', false); ?>/compare"><button class="btn-2" type="button"><strong>Compare another pair</strong></button>
+ </div>
+ </form>
+</div>
+<script>
+ function changeWindow(newWindow) {
+ window.location.href = newWindow;
+ }
+</script>
+</body>
+
+</html>
