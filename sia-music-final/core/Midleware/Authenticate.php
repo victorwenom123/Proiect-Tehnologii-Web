@@ -92,8 +92,8 @@ class AuthenticateUtils extends Core
 
     private function generate_session_id()
     {
-        $ip = $_SERVER["REMOTE_ADDR"];
-        $domain = $_SERVER["DOCUMENT_ROOT"];
+        $ip = $_SERVER["REMOTE_ADDR"];//returns server's ip
+        $domain = $_SERVER["DOCUMENT_ROOT"];//the root directory of this site defined by the 'DocumentRoot' directive in the General Section
         $date = date("Y-m-d");
     
         return base64_encode($ip . "_" . $domain . "_" . $date);
@@ -157,7 +157,7 @@ class AuthenticateUtils extends Core
       */
       public function url_redirect($url)
       {
-          if (!headers_sent()) 
+          if (!headers_sent()) //Checks if or where headers have been sent.
           {
           header('Location: ' . $url);
           } 

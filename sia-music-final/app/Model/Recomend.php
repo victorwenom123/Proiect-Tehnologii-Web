@@ -58,7 +58,7 @@ class Recomend extends Model
         $tags = explode(",",$tags);
         if(count($tags))
         {
-            $tags = array_filter($tags);
+            $tags = array_filter($tags);//remove empty or eqivalent tags
             foreach($tags as $tag)
             {
                 $tagss[] = strtolower($tag);
@@ -79,10 +79,7 @@ class Recomend extends Model
     private function getSongs()
     {
 
-        $con = $this->connect();
-
-        //$tags = $this->analyzeTags($this->songTags);
-        //$locations_refferences = $this->$this->analyzeTags($this->songLocationRefferences);
+        $con = $this->connect();;
 
         $criterias  = array
         (
@@ -137,16 +134,16 @@ class Recomend extends Model
 
         if($results)
         {
-            $tags = explode(",",$tags);
+            if($tags)$tags = explode(",",$tags);
             foreach($tags as $tag)
             {
                 foreach($results as $key=>$value)
-                {
+                {   //the tags for each song are taken separately
                     $resultTags = $results[$key]["tags"];
                     $resultTags = explode(",",$resultTags);
 
                     foreach($resultTags as $resultTag)
-                    {
+                    {/*if the current tags are among the tags of a song the key of the song is saved in an array*/ 
                         if($tag == $resultTag)
                         {
                             $arrayKey[] = array("resultKey" => "$key");
@@ -159,7 +156,7 @@ class Recomend extends Model
                     }
                 }
             }
-
+            /*we check if we find songs with the respective tags*/
             if(count($arrayKey))
             {
                 $arrayKey = array_filter($arrayKey);

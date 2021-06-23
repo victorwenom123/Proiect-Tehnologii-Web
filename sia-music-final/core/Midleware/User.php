@@ -36,9 +36,6 @@ class User extends Core
 
     public function add_user(array $user_fields = null, string $user_table = "users")
     {
-        /**
-         * $user = array("username" => "","password" => "","password2", "first_name" => "", "last_name" => "", "email" => "", "phone" => "");
-         */
 
         $con = $this->connect();
 
@@ -117,7 +114,7 @@ class User extends Core
         {
             $password = hash('sha512', $password . 'ENGINERSA1244');
 
-            $update = mysqli_query($con , "UPDATE users SET password = '".addslashes($password)."' WHERE id = '$id'");
+            $update = mysqli_query($con , "UPDATE users SET password = '".addslashes($password)."' WHERE id = '$user_id'");
             if($update)
             {
                 return true;

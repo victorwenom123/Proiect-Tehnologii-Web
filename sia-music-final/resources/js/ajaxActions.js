@@ -10,17 +10,31 @@
      * @returns {XMLHttpRequest|any}
      */
     function postAjax(url, data, success) {
+        /*if "data" is a string then "params" will take data's value
+        else "data" is an array and "params" will take the string that will be created from data's keys annd values */
         var params = typeof data == 'string' ? data : Object.keys(data).map(
             function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
         ).join('&');
-
+        /*XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having
+         to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.*/
         var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        
+        /*Initializes a request.*/
         xhr.open('POST', url);
+        /*An event handler that is called whenever the readyState attribute changes*/
         xhr.onreadystatechange = function() {
+            /*xhr.responseText returns a DOMString that contains the response to the request as text, 
+            or null if the request was unsuccessful or has not yet been sent.*/
             if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+
         };
+
+        /*The XMLHttpRequest method setRequestHeader() sets the value of an HTTP request header. */
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        /*//For application/x-www-form-urlencoded, the body of the HTTP message sent to the server is essentially one giant query string -- 
+        name/value pairs are separated by the ampersand (&), and names are separated from values by the equals symbol (=). An example of this would be: */
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        /*The XMLHttpRequest method send() sends the request to the server.*/
         xhr.send(params);
         return xhr;
     }
