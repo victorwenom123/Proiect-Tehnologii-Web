@@ -151,7 +151,7 @@ class AudioAPI extends Controller
                     "artist_similarity" => $similarArtist,
                     "song_similarity" => $similarSong,
                     "tags_similarity" => $this->compareArrays($this->convertToArray($firstTags,","),$this->convertToArray($secondTags,",")),
-                    "comment_similarity" => $this->compareArrays($this->convertToArray($firstComments,"#"),$this->convertToArray($secondComments,"#")),
+                    "comment_similarity" => $this->compareArrays($this->convertToArray($firstComments,"+"),$this->convertToArray($secondComments,"+")),
                     "genre_similarity" => $similarGenre,
                     "length_similarity" => $similarLength,
                     "found_tags" => $firstTags.",".$secondTags
